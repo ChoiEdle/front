@@ -21,7 +21,7 @@ export function SlideContainer({ images, index, setIndex }) {
         ))}
 
       <SlideDots
-        count={images.length}
+        count={images?.length}
         activeIndex={index}
         setIndex={setIndex}
         icon={<IoIosRadioButtonOn />}
