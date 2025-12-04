@@ -247,7 +247,7 @@ export function Signup() {
     
     useEffect(() => {
         const load = async() => {
-            const result = await api.get('/data/terms.json');
+            const result = await api.get('https://front-testing-five.vercel.app/data/terms.json');
             setTermList(result.data.terms);
         }
         load();
