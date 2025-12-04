@@ -40,7 +40,6 @@ export default function Home() {
   useEffect(() => {
     const fetchData = async() => {
       const result = await api.get('https://front-testing-five.vercel.app/data/homeDataimages.json');
-      console.log(result.data);
       setImages(result.data.images);
     };
     dispatch(setProductListAPI());
