@@ -22,7 +22,7 @@ import ProductList from "shared/ui/ProductList/ProductList";
 export default function Home() {
   const [images, setImages] = useState([]);
   const dispatch = useDispatch();
-  const { index, setIndex } = useAutoSlider(images.length, 5000);
+  const { index, setIndex } = useAutoSlider(images?.length, 5000);
   const [advertiseList, setAdvertiseList] = useState([]);
   const bannerAds = advertiseList.filter(ad => ad.advImageBanner !== null);
   const inlineAds = advertiseList.filter(ad => ad.advImageInline !== null);
@@ -40,6 +40,7 @@ export default function Home() {
   useEffect(() => {
     const fetchData = async () => {
       const result = await api.get("https://front-testing-five.vercel.app/data/homeDataImages.json");
+      console.log(result);
       setImages(result.data.images);
     };
     dispatch(setProductListAPI());
