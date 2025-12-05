@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { parseJwt } from "features/auth/parseJwt";
 import { removeCart, showCart, updateCart } from "features/cart/cartAPI";
 import "./Cart.scss";
+import { api } from "shared/lib/axios";
 
 export function Cart() {
     const navigate = useNavigate();
@@ -24,6 +25,13 @@ export function Cart() {
             setUserId(payload.id); // ✅ 토큰 안의 id를 그대로 사용
             dispatch(showCart(payload.id));
         }
+
+        const iptest = async() => {
+            const ip = api.get("/check-ip");
+            console.log(ip);
+        }
+
+        iptest();
     }, [])
     
     return (
