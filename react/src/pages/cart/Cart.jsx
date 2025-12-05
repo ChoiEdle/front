@@ -27,7 +27,7 @@ export function Cart() {
         }
 
         const iptest = async() => {
-            const ip = api.get("/check-ip");
+            const ip = await api.get("/check-ip");
             console.log(ip);
         }
 
